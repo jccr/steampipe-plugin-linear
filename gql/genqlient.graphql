@@ -1,0 +1,68 @@
+# @genqlient(omitempty: true)
+query listIssue($first: Int, $after: String) {
+  issues(first: $first, after: $after) {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    nodes {
+      id
+      createdAt
+      updatedAt
+      archivedAt
+      number
+      title
+      description
+      priority
+      estimate
+      sortOrder
+      startedAt
+      completedAt
+      canceledAt
+      autoClosedAt
+      autoArchivedAt
+      dueDate
+      trashed
+      snoozedUntilAt
+      # @genqlient(pointer: true)
+      team {
+        id
+      }
+      # @genqlient(pointer: true)
+      cycle {
+        id
+      }
+      # @genqlient(pointer: true)
+      project {
+        id
+      }
+      previousIdentifiers
+      # @genqlient(pointer: true)
+      creator {
+        id
+      }
+      # @genqlient(pointer: true)
+      assignee {
+        id
+      }
+      # @genqlient(pointer: true)
+      snoozedBy {
+        id
+      }
+      # @genqlient(pointer: true)
+      state {
+        id
+      }
+      # @genqlient(pointer: true)
+      parent {
+        id
+      }
+      subIssueSortOrder
+      priorityLabel
+      identifier
+      url
+      branchName
+      customerTicketCount
+    }
+  }
+}
